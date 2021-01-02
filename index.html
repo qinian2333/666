@@ -1,13 +1,11 @@
-<html> 
-   <head> 
-        <script type="text/javascript"> 
-        function startTime(){ 
-        var today=new Date(); 
-        var strDate=(" "+today.getYear()+"年"+(today.getMonth()+1)+"月"+today.getDate()+"日"); 
-        var n_day=today.getDay(); 
-        switch(n_day){ 
-        case 0: 
-        {strDate=strDate+" 星期日 "}break; 
+<td class="date"> 
+   <script language="JavaScript" type="text/javascript"> 
+var today=new Date(); 
+var strDate=(" "+today.getYear()+"年"+(today.getMonth()+1)+"月"+today.getDate()+"日"); 
+var n_day=today.getDay(); 
+switch(n_day){ 
+case 0: 
+{strDate=strDate+" 星期日 "}break; 
 case 1: 
 {strDate=strDate+" 星期一 "}break; 
 case 2: 
@@ -23,26 +21,6 @@ case 6:
 case 7: 
 {strDate=strDate+" 星期日 "}break; 
 } 
-//增加时分秒 
-// add a zero in front of numbers<10 
-var h=today.getHours(); 
-var m=today.getMinutes(); 
-var s=today.getSeconds() 
-m=checkTime(m); 
-s=checkTime(s); 
-strDate=strDate+" "+h+":"+m+":"+s; 
-document.getElementById('txt').innerHTML=strDate; 
-t=setTimeout('startTime()',400) 
-} 
-
-function checkTime(i){ 
-if (i<10) {i="0" + i} 
-return i 
-} 
+document.write(strDate); 
 </script> 
-</head> 
-
-<body onload="startTime()"> 
-<div id="txt"></div> 
-</body> 
-</html> 
+</td> 
